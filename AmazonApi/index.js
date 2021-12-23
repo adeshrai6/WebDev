@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
     res.send('Welcome to Amazon Scrapper API.');
 });
 
-//GET product detail
+//GET product detail from Amazon
 app.get('/products/:productId', async(req, res) =>
 {
     const { productId } = req.params;
