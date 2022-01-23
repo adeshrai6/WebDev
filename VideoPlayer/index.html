@@ -11,14 +11,17 @@
 </head>
 <body>
     <h1>Custom Video Player</h1>
-    <video src="video/guitar.mp4" id="video" class="screen">Video</video>
+    <video controls class="screen" id="video" poster="image/guitar.jpeg">Video</video>
+    <source src="video/guitar.mp4" >
     <div class="controls">
         <button class="btn" id="play">
-            <i class="fa fa-play fa-2s"></i>
+            <em class="fa fa-play fa-2s"></em>
         </button>
         <button class="btn" id="stop">
-            <i class="fa fa-stop fa-2s"></i>
+            <em class="fa fa-stop fa-2s"></em>
         </button>
+        <input type="range" id="progress" class="progress" min="0" max="100" step="0.1" value="0"/>
+        <span class="timestamp" id="timestamp"></span>
     </div>
     
 <script src="script.js"></script>
