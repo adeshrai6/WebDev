@@ -13,6 +13,10 @@ function toggleVideoStatus(){
     }
 }
 
+function updateProgress(){
+    console.log(video.currentTime);
+}
+
 // Update play/pause icon
 function updatePlayIcon(){
     if(video.paused){
