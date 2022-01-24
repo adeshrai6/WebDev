@@ -14,21 +14,32 @@ function toggleVideoStatus(){
 }
 
 function updateProgress(){
-    console.log(video.currentTime);
+    progress.value = (video.currentTime / video.duration) * 100
+
+    let mins = Math.floor(video.currentTime/60);
+    if(mins < 10){
+        mins = '0' + String(mins);
+    }
+
+    let secs = Math.floor(video.currentTime%60);
+    if(secs < 10){
+        secs = '0' + String(mins);
+    }
+    timestamp.innerHTML = `${mins}:${secs}`
 }
 
 // Update play/pause icon
 function updatePlayIcon(){
     if(video.paused){
-        play.innerHTML = '<em class="fa fa-play fa-2x"></em>';
+        play.innerHTML = '<i class="fa fa-play fa-2x"></i>';
     }else{
-        play.innerHTML = '<em class="fa fa-pause fa-2x"></em>';
+        play.innerHTML = '<i class="fa fa-pause fa-2x"></i>';
     }
 }
 
 //Update progress & timestamp
 function setVideoProgress(){
-    return true;
+    video.currentTime = (+progress.video*video.duration) * 100;
 }
 
 //Stop video
