@@ -10,4 +10,18 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
 //Song Title
-const songInd = 
+const songs = ['Mutu Bhari', 'Pahilo Junima', 'parilima'];
+
+// Keep track of song
+let sondIndex = 2;
+
+// Initially load song details into Dom
+
+loadSong([song[sondIndex]]);
+
+function loadSong (song) {
+    title.innerText = song;
+    audio.src = `music/${song}.mp3`;
+    cover.src = `images/${song}.jpg`;
+
+}
