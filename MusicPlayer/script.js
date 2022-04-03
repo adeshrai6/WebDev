@@ -13,7 +13,7 @@ const cover = document.getElementById('cover');
 const songs = ['MutuBhari', 'PahiloJunima', 'parilima'];
 
 // Keep track of song
-let sondIndex = 2;
+let sondIndex = 1;
 
 // Initially load song details into Dom
 
@@ -22,5 +22,17 @@ loadSong([songs[sondIndex]]);
 function loadSong (song) {
     title.innerText = song;
     audio.src = `music/${song}.mp3`;
-    cover.src = `images/${song}.jpg`;
+    cover.src = `images/${song}.jpeg`;
 }
+
+
+
+
+// Event Listners
+playBth.addEventListener('click', () => {
+    const isPlaying = musicContainer.classList.contains('play');
+
+    if(isPlaying){pausSong();}
+    else{playSong();}
+
+})
