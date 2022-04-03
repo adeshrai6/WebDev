@@ -1,4 +1,4 @@
-const musicContainer = document.getElementById('music_container');
+const musicContainer = document.getElementById('music-container');
 const playBth = document.getElementById('play');
 const prevBth = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
@@ -13,11 +13,11 @@ const cover = document.getElementById('cover');
 const songs = ['MutuBhari', 'PahiloJunima', 'parilima'];
 
 // Keep track of song
-let sondIndex = 1;
+let sondIndex = 0;
 
 // Initially load song details into Dom
 
-loadSong([songs[sondIndex]]);
+loadSong(songs[sondIndex]);
 
 function loadSong (song) {
     title.innerText = song;
@@ -25,14 +25,21 @@ function loadSong (song) {
     cover.src = `images/${song}.jpeg`;
 }
 
+//Play Song
+function playSong(){
+    musicContainer.classList.add('play');
+    playBth.querySelector('i.fas').classList.remove('fa-play');
+    playBth.querySelector('i.fas').classList.add('fa-pause');
 
+    audio.play();
+}
 
 
 // Event Listners
 playBth.addEventListener('click', () => {
     const isPlaying = musicContainer.classList.contains('play');
 
-    if(isPlaying){pausSong();}
+    if(isPlaying){pauseSong();}
     else{playSong();}
 
 })
