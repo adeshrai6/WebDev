@@ -13,11 +13,11 @@ const cover = document.getElementById("cover");
 const songs = ["MutuBhari", "PahiloJunima", "parelima"];
 
 // Keep track of song
-let sondIndex = 1;
+let songIndex = 0;
 
 // Initially load song details into Dom
 
-loadSong(songs[sondIndex]);
+loadSong(songs[songIndex]);
 
 function loadSong(song) {
   title.innerText = song;

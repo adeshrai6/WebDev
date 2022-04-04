@@ -44,7 +44,7 @@ body {
     left: 50%;
     width: 30px;
     height: 30px;
-    transform: translate(-50%, 5%);
+    transform: translate(-50%, 50%);
 }
 
 .img-container img {
