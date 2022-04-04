@@ -10,7 +10,7 @@ const title = document.getElementById("title");
 const cover = document.getElementById("cover");
 
 //Song Title
-const songs = ["MutuBhari", "PahiloJunima", "ukulele"];
+const songs = ["MutuBhari", "PahiloJunima", "parelima"];
 
 // Keep track of song
 let songIndex = 2;
@@ -38,7 +38,7 @@ function playSong() {
 function pauseSong() {
   musicContainer.classList.add('play');
   playBtn.querySelector('i.fas').classList.add('fa-play');
-  playBtn.querySelector('i.fas').classList.rempove('fa-pause');
+  playBtn.querySelector('i.fas').classList.remove('fa-pause');
 
   audio.pause();
 }
