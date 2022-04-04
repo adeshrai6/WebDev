@@ -1,6 +1,6 @@
 const musicContainer = document.getElementById("music-container");
-const playBth = document.getElementById("play");
-const prevBth = document.getElementById("prev");
+const playBtn = document.getElementById("play");
+const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 
 const audio = document.getElementById("audio");
@@ -10,10 +10,10 @@ const title = document.getElementById("title");
 const cover = document.getElementById("cover");
 
 //Song Title
-const songs = ["MutuBhari", "PahiloJunima", "parelima"];
+const songs = ["MutuBhari", "PahiloJunima", "ukulele"];
 
 // Keep track of song
-let songIndex = 0;
+let songIndex = 2;
 
 // Initially load song details into Dom
 
@@ -28,14 +28,23 @@ function loadSong(song) {
 //Play Song
 function playSong() {
   musicContainer.classList.add('play');
-  playBth.querySelector('i.fas').classList.remove('fa-play');
-  playBth.querySelector('i.fas').classList.add('fa-pause');
+  playBtn.querySelector('i.fas').classList.remove('fa-play');
+  playBtn.querySelector('i.fas').classList.add('fa-pause');
 
   audio.play();
 }
 
+//Pause Song
+function pauseSong() {
+  musicContainer.classList.add('play');
+  playBtn.querySelector('i.fas').classList.add('fa-play');
+  playBtn.querySelector('i.fas').classList.rempove('fa-pause');
+
+  audio.pause();
+}
+
 // Event Listners
-playBth.addEventListener('click', () => {
+playBtn.addEventListener('click', () => {
   const isPlaying = musicContainer.classList.contains('play');
 
   if (isPlaying) {
