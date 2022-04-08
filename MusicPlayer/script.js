@@ -36,7 +36,7 @@ function playSong() {
 
 //Pause Song
 function pauseSong() {
-  musicContainer.classList.add('play');
+  musicContainer.classList.remove('play');
   playBtn.querySelector('i.fas').classList.add('fa-play');
   playBtn.querySelector('i.fas').classList.remove('fa-pause');
 
