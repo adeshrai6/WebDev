@@ -79,6 +79,18 @@ function updateProgress(e){
   progress.style.width = `${progressPercent}%`;
 }
 
+
+// Set Progress Bar
+function setProgress(e){
+  const width = this.clientWidth; //width of progress bar
+  const clickX = e.offsetX;       //length of licked progress bar
+  const duraton = audio.duration; //song total duration
+
+  audio.currentTime = (clickX / width) * duraton;
+
+}
+
+
 // Event Listners
 playBtn.addEventListener('click', () => {
   const isPlaying = musicContainer.classList.contains('play');
@@ -96,3 +108,6 @@ nextBtn.addEventListener('click', nextSong);
 
 // Song Duration
 audio.addEventListener('timeupdate', updateProgress);
+
+// Click on progress bar
+progressContainer.addEventListener('click', setProgress);
