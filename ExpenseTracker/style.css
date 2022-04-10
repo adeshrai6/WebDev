@@ -123,7 +123,7 @@ input[type='text'], input[type='number']{
 }
 
 .list li.plus {
-    border-right:#2ecc71;
+    border-right :5px solid #2ecc71;
 }
 
 .list li.minus{
