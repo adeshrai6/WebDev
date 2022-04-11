@@ -13,12 +13,12 @@ const dummyTransactions = [
   { id: 4, text: "Camera", amount: 150 },
 ];
 
-const localStorageTransaction = JSON.parse(
+const localStorageTransactions = JSON.parse(
   localStorage.getItem("transactions")
 );
 
 let transactions =
-  localStorage.getItem("transactions") !== null ? localStorageTransaction : [];
+  localStorage.getItem("transactions") !== null ? localStorageTransactions : [];
 // let transactions = dummyTransactions;
 
 // Add Transaction
@@ -61,10 +61,9 @@ function addTransactionDOM(transaction) {
 
   item.innerHTML = `${transaction.text} <span>${sign}${Math.abs(
     transaction.amount
-  )}
-    </>span <button class="delete-btn>" onClick="removeTransaction ${
+  )}</span> <button class="delete-btn" onClick="removeTransaction(${
       transaction.id
-    }">x</button>`;
+    })">x</button>`;
 
   list.appendChild(item);
 }
@@ -85,9 +84,9 @@ function updateValues() {
     -1
   ).toFixed(2);
 
-  balance.innerHTML = `$${total}`;
-  money_minus.innerHTML = `$${expense}`;
-  money_plus.innerHTML = `$${income}`;
+  balance.innerText = `$${total}`;
+  money_minus.innerText = `$${expense}`;
+  money_plus.innerText = `$${income}`;
 }
 
 // Remove transaction by ID
