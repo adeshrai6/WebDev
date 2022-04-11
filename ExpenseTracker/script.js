@@ -18,6 +18,34 @@ const dummyTransections = [
 let transections = dummyTransections;
 
 
+// Add Transaction
+function addTransaction(){
+
+    if(text.value.trim() === '' || amount.value.trim() == ''){
+        alert('Please add a text or amount');
+    }else{
+        const transection = {
+            id: generateID(),
+            text: text.value,
+            amount: +amount.value
+        };
+
+        transections.push(transection);
+
+        addTransactionDOM(transection);
+
+        updateValues();
+
+        text.value = '';
+        amount.value = '';
+    }
+}
+
+// Generate random ID
+function generateID() {
+    return Math.floor(Math.random() * 10000000);
+}
+
 // Add transections to DOM list
 function addTransactionDOM(transection){
     // Get sign
@@ -68,3 +96,5 @@ function init(){
 }
 
 init();
+
+form.addEventListener('submit', addTransaction);
