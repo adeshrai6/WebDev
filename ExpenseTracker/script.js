@@ -7,7 +7,7 @@ const text = document.getElementById('text');
 const amount = document.getElementById('amount'); 
 
 
-const dummyTransections = [
+const dummyTransactions = [
     {id:1, text: 'Flower', amount: -20},
     {id:2, text: 'Salary', amount: 300},
     {id:3, text: 'Book', amount: -10},
@@ -15,7 +15,7 @@ const dummyTransections = [
 ]
 
 
-let transections = dummyTransections;
+let transactions = dummyTransactions;
 
 
 // Add Transaction
@@ -24,15 +24,15 @@ function addTransaction(){
     if(text.value.trim() === '' || amount.value.trim() == ''){
         alert('Please add a text or amount');
     }else{
-        const transection = {
+        const transaction = {
             id: generateID(),
             text: text.value,
             amount: +amount.value
         };
 
-        transections.push(transection);
+        transactions.push(transaction);
 
-        addTransactionDOM(transection);
+        addTransactionDOM(transaction);
 
         updateValues();
 
@@ -47,16 +47,16 @@ function generateID() {
 }
 
 // Add transections to DOM list
-function addTransactionDOM(transection){
+function addTransactionDOM(transaction){
     // Get sign
-    const sign = transection.amount < 0 ? '–' : '+';
+    const sign = transaction.amount < 0 ? '–' : '+';
 
     const item = document.createElement('li');
 
-    item.classList.add(transection.amount < 0 ? 'minus' : 'plus');
+    item.classList.add(transaction.amount < 0 ? 'minus' : 'plus');
 
-    item.innerHTML = `${transection.text} <span>${sign}${Math.abs(transection.amount)}
-    </>span <button class="delete-btn>">x</button>`;
+    item.innerHTML = `${transaction.text} <span>${sign}${Math.abs(transaction.amount)}
+    </>span <button class="delete-btn>" onClick="removeTransaction ${transaction.id}">x</button>`;
 
     list.appendChild(item);
 }
@@ -65,7 +65,7 @@ function addTransactionDOM(transection){
 // Update the balance income and expense 
 function updateValues()
 {
-    const amounts = transections.map(transection => transection.amount);
+    const amounts = transactions.map(transaction => transaction.amount);
 
     const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
 
@@ -86,12 +86,18 @@ function updateValues()
 
 }
 
+// Remove transaction by ID
+function removeTransaction(id) {
+    transactions = transactions.filter(transaction => transaction.id !== id);
+
+    init();
+}
 
 // Initilize app
 function init(){
     list.innerHTML = '';
 
-    transections.forEach(addTransactionDOM);
+    transactions.forEach(addTransactionDOM);
     updateValues();
 }
 
