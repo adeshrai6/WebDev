@@ -16,3 +16,19 @@ body {
     margin: 0;
     padding-bottom: 100px;
 }
+
+h1 {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.filter-container {
+    margin-top: 20px;
+    width: 80vh;
+    max-width: 800px;
+}
+
+.filter {
+   width: 100%;
+   padding: 12px; 
+}
