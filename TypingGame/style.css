@@ -31,6 +31,15 @@ button {
     left: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
-
+    height: 70px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(0);
+    transition: transform 0.3 ease-in-out;
 }
 
+.settings.hide {
+    transform: translateY(-100%);
+}
