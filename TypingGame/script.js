@@ -6,7 +6,7 @@ const endgameEl = document.getElementById('end-game-container');
 const settingsBtn = document.getElementById('settings-btn');
 const settings = document.getElementById('settings');
 const settingsForm = document.getElementById('settings-form');
-const difficultySelect = document.getElementById('defficulty');
+const difficultySelect = document.getElementById('difficulty');
 
 // Lists of words
 const words = [
@@ -109,7 +109,7 @@ text.addEventListener('input', e => {
 
 
 // Settings btn click
-settings.addEventListener('click', () => 
+settingsBtn.addEventListener('click', () => 
 settings.classList.toggle('hide'));
 
 // Settings select
