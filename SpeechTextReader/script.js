@@ -4,3 +4,56 @@ const textarea = document.getElementById('text');
 const readBtn = document.getElementById('read');
 const toggleBtn = document.getElementById('toggle');
 const closeBtn = document.getElementById('close');
+
+const data = [
+    {
+        image: './img/drink.jpg',
+        text: "I'm Thirsty"
+    },
+    {
+        image: './img/food.jpg',
+        text: "I'm Hungry"
+    },
+    {
+        image: './img/tired.jpg',
+        text: "I'm Tired"
+    },
+    {
+        image: './img/hurt.jpg',
+        text: "I'm Hurt"
+    },
+    {
+        image: './img/happy.jpg',
+        text: "I'm Happy"
+    },
+    {
+        image: './img/angry.jpg',
+        text: "I'm Angry"
+    },
+    {
+        image: './img/sad.jpg',
+        text: "I'm Sad"
+    },
+    {
+        
+        image: './img/scared.jpg',
+        text: "I'm Scared"
+    },
+    {
+        image: './img/outside.jpg',
+        text: "I want to go Outside"
+    },
+    {
+        image: './img/home.jpg',
+        text: "I want to go Home"
+    },
+    {
+        image: './img/school.jpg',
+        text: "I want to go School"
+    },
+    {
+        image: './img/grandma.jpg',
+        text: "I want to go to Grandma"
+    }
+
+]
