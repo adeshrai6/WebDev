@@ -129,8 +129,15 @@ toggleBtn.addEventListener('click', () => document.getElementById('text-box').cl
 closeBtn.addEventListener('click', () => document.getElementById('text-box').classList.remove('show'));
 
 
-// 
+// Change voice
 voicesSelect.addEventListener('change', setVoice);
+
+
+// Read text buttin
+readBtn.addEventListener('click', () => {
+    setTextMessage(textarea.value);
+    speakText();
+});
 
 
 getVoices();
