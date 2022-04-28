@@ -63,12 +63,11 @@ function createCard(data, index) {
         </div>
     </div>`;
 
+    card.addEventListener('click', () => card.classList.toggle('show-answer'));
 
     cardsEl.push(card);
 
     cardsContainer.appendChild(card);
 }
-
-
 
 createCards();
