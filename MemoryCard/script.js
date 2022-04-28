@@ -68,6 +68,14 @@ function createCard(data, index) {
     cardsEl.push(card);
 
     cardsContainer.appendChild(card);
+
+    updateCurrentText();
+}
+
+
+// Show number of cards
+function updateCurrentText() {
+    currentEl.innerHTML = `${currentActiveCard+1}/${cardsEl.length}`;
 }
 
 createCards();
