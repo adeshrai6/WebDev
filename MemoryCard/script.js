@@ -121,3 +121,6 @@ prevBtn.addEventListener('click', () => {
 
 });
 
+
+// Show add container
+showBtn.addEventListener('click', () => addContainer.classList.add('show'));
