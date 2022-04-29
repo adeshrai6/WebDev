@@ -156,3 +156,12 @@ addCardBtn.addEventListener('click', () => {
         setCardsData(cardsData);
     }
 });
+
+
+
+// Clear cards button
+clearBtn.addEventListener('click', () => {
+    localStorage.clear();
+    cardsContainer.innerHTML = '';
+    window.location.reload();
+})
