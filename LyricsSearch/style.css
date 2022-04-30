@@ -97,18 +97,18 @@ ul.songs {
 ul.songs li {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin: 10px 0;
 }
 
-.contianer {
+.container {
     margin: 30px auto;
     max-width: 100%;
     width: 500px;
 }
 
-.contianer h2 {
-    font-weight: 30px;
+.container h2 {
+    font-weight: 300;
 }
 
 .container p {
