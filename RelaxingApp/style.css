@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #224941 url('image/ocean.jpeg') no-repeat center center/cover;
+    min-height: 100vh;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
