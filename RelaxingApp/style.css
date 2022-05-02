@@ -78,7 +78,7 @@ body {
 }
 
 @keyframes rotate {
-    form {
+    fr0m {
         transform: rotate(0deg);
     }
 
@@ -93,7 +93,7 @@ body {
 }
 
 @keyframes grow {
-    form {
+    from {
         transform: scale(1);
     }
 
@@ -104,15 +104,15 @@ body {
 
 
 .container.shrink {
-    animation: grow 3s linear forwards;
+    animation: shrink 3s linear forwards;
 }
 
 @keyframes shrink {
-    form {
-        transform: scale(1);
+    from {
+        transform: scale(1.2);
     }
 
     to {
-        transform: scale(1.2);
+        transform: scale(1);
     }
 }
