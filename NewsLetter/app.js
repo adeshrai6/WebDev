@@ -36,9 +36,18 @@ app.post("/", function(req, res) {
 
     const url = "https://us18.api.mailchimp.com/3.0/lists/b83768305c"
 
-    https.request(url, options, function(response) {
+    const options = {
+        method: "POST",
+        auth: "adesh:f26de0052b3b99fe7e9d0eb428e4e7c6-us18"
+    }
 
+    const request = https.request(url, options, function(response) {
+        response.on("data", function(data) {
+            console.log(JSON.parse(data));
+        })
     })
+
+    request.write(jsonData);
 });
 
 app.listen(3000, function() {
@@ -46,7 +55,7 @@ app.listen(3000, function() {
 });
 
 // Api Key
-f26de0052b3b99fe7e9d0eb428e4e7c6-us18
+// f26de0052b3b99fe7e9d0eb428e4e7c6-us18
 
 // List key
-b83768305c
+// b83768305c
