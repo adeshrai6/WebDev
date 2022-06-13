@@ -38,7 +38,7 @@ app.post("/", function(req, res) {
 
     const options = {
         method: "POST",
-        auth: "adesh:f26de0052b3b99fe7e9d0eb428e4e7c6-us18"
+        auth: "adeshrai:f26de0052b3b99fe7e9d0eb428e4e7c6-us18"
     }
 
     const request = https.request(url, options, function(response) {
@@ -48,6 +48,7 @@ app.post("/", function(req, res) {
     })
 
     request.write(jsonData);
+    request.end();
 });
 
 app.listen(3000, function() {
